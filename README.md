@@ -6,11 +6,13 @@ Key Components:
 
 Data Collection:
 
+
 Weather: Temperature, rainfall, humidity.
 Soil: Type, pH, nutrients.
 Satellite Data: Vegetation indices, crop health.
 Farming Practices: Irrigation, fertilizer use, crop rotation.
 Preprocessing & Feature Engineering:
+
 
 Clean data (remove duplicates, handle missing values).
 Scale numerical features and encode categorical ones.
