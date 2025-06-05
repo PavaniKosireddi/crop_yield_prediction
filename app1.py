@@ -6,9 +6,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from datetime import datetime
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+import gzip
 
 # Load the best model and preprocessor from crop_yield.py
-best_model = joblib.load('best_model.pkl')
+with gzip.open('best_model.pkl.gz', 'rb') as f_in:
+    best_model = joblib.load(f_in)
 preprocessor = joblib.load('preprocessor.pkl')
 
 # Load the dataset for data analysis
