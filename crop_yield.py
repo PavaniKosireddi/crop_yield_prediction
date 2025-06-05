@@ -65,7 +65,15 @@ best_model_name = min(model_results, key=lambda name: model_results[name]["MSE"]
 best_model = models[best_model_name]
 
 # Save the best model and preprocessor
-joblib.dump(best_model, 'best_model.pkl')
+joblib.dump(best_model, 'best_model.pkl', compress=0)
+
+import gzip
+import shutil
+
+with open('best_model.pkl', 'rb') as f_in:
+    with gzip.open('best_model.pkl.gz', 'wb') as f_out:
+        shutil.copyfileobj(f_in, f_out)
+
 joblib.dump(preprocessor, 'preprocessor.pkl')
 
 # Save predictions and metrics for app1.py
