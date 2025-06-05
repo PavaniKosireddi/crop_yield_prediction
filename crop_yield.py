@@ -7,6 +7,7 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import joblib
+import gzip
 
 # Load the dataset
 df = pd.read_csv("yield_df.csv")
